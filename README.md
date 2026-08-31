@@ -25,3 +25,7 @@ npm run test:e2e:ui
 The production source remains private. Public screenshots are reviewed to
 exclude holdings, trades, cash, notes, credentials, and user identity.
 
+## Visual review
+
+- [Desktop — 1280 × 800](docs/screenshots/showcase-desktop.png)
+- [Mobile — 390 × 844](docs/screenshots/showcase-mobile.png)
