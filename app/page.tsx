@@ -35,10 +35,10 @@ const cases = [
     index: "01",
     title: "The firewall said closed. The Internet said open.",
     summary:
-      "Docker's DNAT rules exposed seven internal services even while ufw reported only SSH and web ports open.",
+      "Docker's DNAT rules left six published ports across five internal services reachable even while ufw reported only SSH and web ports open.",
     evidence: "External probes reached :8000 and :3001 over plain HTTP.",
     decision:
-      "Rebound every published container port to loopback, made Caddy the only ingress, and versioned the host configuration.",
+      "Rebound every published container port to loopback, made Caddy the only public web ingress, and versioned the host configuration.",
     prevention:
       "A regression guard validates every published Compose port and caught three additional exposures on its first day.",
     icon: ShieldCheck,
@@ -108,7 +108,7 @@ export default function Home() {
               <p className="eyebrow">TAIWAN-EQUITY DECISION INTELLIGENCE</p>
               <h1>I built the system that tells me <em>what changed</em>—and whether the evidence deserves a decision.</h1>
               <p className="hero-lede">
-                Stock Ledger joins point-in-time market data, private portfolio context, sourced research, and an autonomous publishing pipeline—then makes every boundary observable, testable, and recoverable.
+                Stock Ledger joins point-in-time market data, private portfolio context, sourced research, and an autonomous publishing pipeline—then makes key boundaries observable, testable, and recoverable.
               </p>
               <div className="hero-actions">
                 <a className="button button-primary" href="#cases">Read the engineering cases<ArrowDown size={15} aria-hidden="true" /></a>

@@ -1,6 +1,6 @@
 const nodes = [
   { x: 48, y: 118, w: 174, h: 72, eyebrow: "PUBLIC EDGE", title: "Browser", detail: "Authenticated visitor" },
-  { x: 272, y: 118, w: 174, h: 72, eyebrow: "HTTPS", title: "Caddy", detail: "Only public ingress" },
+  { x: 272, y: 118, w: 174, h: 72, eyebrow: "HTTPS", title: "Caddy", detail: "Only public web ingress" },
   { x: 496, y: 118, w: 190, h: 72, eyebrow: "APP :3001", title: "Next.js", detail: "Session + API proxy" },
   { x: 742, y: 118, w: 190, h: 72, eyebrow: "DOMAIN :8000", title: "FastAPI", detail: "Policy + orchestration" },
   { x: 988, y: 82, w: 176, h: 72, eyebrow: "SHARED", title: "SQLite", detail: "Market + research" },
@@ -75,8 +75,8 @@ export function ArchitectureDiagram() {
         <g>
           <rect x="354" y="351" width="244" height="88" rx="12" fill="url(#panel)" className="arch-node" />
           <text x="374" y="376" className="arch-eyebrow">HOST CAPABILITIES</text>
-          <text x="374" y="399" className="arch-title">Bridge :8011</text>
-          <text x="374" y="420" className="arch-detail">Claude · browser · rendering</text>
+          <text x="374" y="399" className="arch-title">Host services</text>
+          <text x="374" y="420" className="arch-detail">:8003 API · :8010 render · :8011 bridge</text>
         </g>
         <g>
           <rect x="636" y="351" width="244" height="88" rx="12" fill="url(#panel)" className="arch-node" />
@@ -108,4 +108,3 @@ export function ArchitectureDiagram() {
     </div>
   );
 }
-
