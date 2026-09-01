@@ -27,7 +27,7 @@ const metrics = [
   { value: "551", label: "OpenAPI operations", source: "Generated schema" },
   { value: "924", label: "Public videos", source: "YouTube Data API" },
   { value: "263,079", label: "Channel views", source: "YouTube Data API" },
-  { value: "238", label: "Python test modules", source: "Tracked repository" },
+  { value: "238", label: "Core Python test modules", source: "tests/ directory" },
 ];
 
 const cases = [
