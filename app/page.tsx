@@ -3,7 +3,6 @@ import {
   ArrowUpRight,
   CheckCircle2,
   CircleDot,
-  ExternalLink,
   Github,
   LockKeyhole,
   Play,
