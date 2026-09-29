@@ -24,48 +24,51 @@ const links = {
 };
 
 const metrics = [
-  { value: "551", label: "OpenAPI operations", source: "Generated schema" },
+  { value: "12+", label: "Market data sources", source: "Production integrations" },
   { value: "924", label: "Public videos", source: "YouTube Data API" },
-  { value: "263,079", label: "Channel views", source: "YouTube Data API" },
-  { value: "238", label: "Core Python test modules", source: "tests/ directory" },
+  { value: "263K+", label: "Channel views", source: "YouTube Data API" },
+  { value: "2026", label: "Production since", source: "Current system" },
 ];
 
 const cases = [
   {
     index: "01",
-    title: "The firewall said closed. The Internet said open.",
+    title: "A signal failed its own test.",
     summary:
-      "Docker's DNAT rules left six published ports across five internal services reachable even while ufw reported only SSH and web ports open.",
-    evidence: "External probes reached :8000 and :3001 over plain HTTP.",
+      "A flagship buy-candidate signal produced a 46% hit rate across 325 verified calls.",
+    evidence:
+      "Realized outcomes did not support the confidence implied by the signal.",
     decision:
-      "Rebound every published container port to loopback, made Caddy the only public web ingress, and versioned the host configuration.",
+      "Retired the signal and separated reported confidence from observed performance.",
     prevention:
-      "A regression guard validates every published Compose port and caught three additional exposures on its first day.",
-    icon: ShieldCheck,
-  },
-  {
-    index: "02",
-    title: "Financial data must be true as of the decision—not true today.",
-    summary:
-      "A current price silently inserted into a historical portfolio view creates a result that never existed in real time.",
-    evidence: "Consumers need coverage by symbol and date; table-level MAX(date) is not enough.",
-    decision:
-      "Built a canonical resolver that enforces date ≤ as_of and carries source, effective date, freshness, and degradation.",
-    prevention:
-      "Missing values remain unavailable rather than becoming zero; point-in-time behavior is protected by focused tests.",
+      "Calibration checks now warn when confidence and realized outcomes drift apart.",
     icon: Radar,
   },
   {
-    index: "03",
-    title: "An autonomous pipeline needs evidence, not green status lights.",
+    index: "02",
+    title: "Keeping historical analysis point-in-time correct.",
     summary:
-      "A system-wide audit found silent fallbacks, dead routes, misleading success states, and a recovery path manufacturing content.",
-    evidence: "98 of 117 local errors—84%—came from one host-to-container transport boundary.",
+      "Using today's price inside a historical portfolio view creates a result that never existed at the time.",
+    evidence:
+      "Consumers need data coverage by symbol and date, not only a table-level latest timestamp.",
     decision:
-      "Made degradation visible, hardened QA into a blocking gate, reclaimed stuck runs, and consolidated producers behind a slot table.",
+      "Built a canonical resolver that enforces date ≤ as_of and carries source, effective date, freshness, and degradation.",
     prevention:
-      "Operational health now checks consumer outcomes and artifacts, not only whether a scheduler callback returned.",
+      "Missing values stay unavailable rather than becoming zero, with focused tests protecting point-in-time behavior.",
     icon: TestTube2,
+  },
+  {
+    index: "03",
+    title: "Keeping AI inside explicit operational boundaries.",
+    summary:
+      "AI tools can read research and record completed activity, but they do not have order-execution capability.",
+    evidence:
+      "Public and private tools are split by permission scope, with read/write boundaries enforced by profile.",
+    decision:
+      "Kept execution outside the agent surface and added compliance checks around generated research.",
+    prevention:
+      "Prompt regression tests, logged fallbacks, and fail-closed publishing protect critical outputs.",
+    icon: ShieldCheck,
   },
 ];
 
@@ -105,10 +108,10 @@ export default function Home() {
           <div className="container hero-content">
             <div className="hero-copy">
               <div className="status-line"><CircleDot size={14} aria-hidden="true" /><span>Independently built &amp; operated</span><span className="status-separator">•</span><span>Production since 2026</span></div>
-              <p className="eyebrow">TAIWAN-EQUITY DECISION INTELLIGENCE</p>
-              <h1>I built the system that tells me <em>what changed</em>—and whether the evidence deserves a decision.</h1>
+              <p className="eyebrow">TAIWAN EQUITY RESEARCH & PORTFOLIO MONITORING</p>
+              <h1>A production research and portfolio monitoring system for Taiwan equities.</h1>
               <p className="hero-lede">
-                Stock Ledger joins point-in-time market data, private portfolio context, sourced research, and an autonomous publishing pipeline—then makes key boundaries observable, testable, and recoverable.
+                Stock Ledger combines market data, portfolio records, sourced research, scheduled analysis, and automated publishing in one system. I built it for my own workflow and have operated it in production since 2026.
               </p>
               <div className="hero-actions">
                 <a className="button button-primary" href="#cases">Read the engineering cases<ArrowDown size={15} aria-hidden="true" /></a>
@@ -144,8 +147,8 @@ export default function Home() {
         <section className="section section-muted" id="cases">
           <div className="container">
             <div className="section-heading case-heading">
-              <div><p className="eyebrow">ENGINEERING CASE STUDIES</p><h2>The project is large. The decisions are the proof.</h2></div>
-              <p>Three cases show how I diagnose a system across code, data, infrastructure, and product behavior—and leave a guardrail behind.</p>
+              <div><p className="eyebrow">ENGINEERING CASE STUDIES</p><h2>Three decisions that changed the system.</h2></div>
+              <p>Each case starts with a result or failure, shows the decision that followed, and records the safeguard added afterward.</p>
             </div>
             <div className="case-list">
               {cases.map((item) => {
@@ -164,8 +167,8 @@ export default function Home() {
         <section className="section" id="evidence">
           <div className="container">
             <div className="section-heading">
-              <div><p className="eyebrow">PRODUCT EVIDENCE</p><h2>The interface shows uncertainty instead of decorating over it.</h2></div>
-              <p>These are public-safe product states. One connects a social claim to dated context and candidate sources; the other refuses to manufacture a heatmap when the dataset is empty.</p>
+              <div><p className="eyebrow">PRODUCT EVIDENCE</p><h2>Public examples of how the product handles uncertainty.</h2></div>
+              <p>One view keeps unverified social evidence clearly labeled. Another shows no data rather than turning missing records into zero.</p>
             </div>
             <div className="screenshots">
               <figure className="screenshot screenshot-wide">
@@ -184,8 +187,8 @@ export default function Home() {
           <div className="container output-grid">
             <div>
               <p className="eyebrow">PUBLIC OUTPUT</p>
-              <h2>The automation has an audience-facing consequence.</h2>
-              <p>The research-to-media pipeline has published 924 public videos and accumulated 263,079 channel views. The channel is evidence that the ingestion, generation, QA, rendering, and publishing chain runs outside a notebook.</p>
+              <h2>The research pipeline also produces public output.</h2>
+              <p>The research-to-media pipeline has published 924 public videos and accumulated 263,079 channel views, exercising ingestion, generation, QA, rendering, and publishing outside a notebook.</p>
               <p className="source-line">YouTube Data API · channel statistics verified 31 Aug 2026. Public count may change after publication.</p>
             </div>
             <div className="output-card">
@@ -210,7 +213,7 @@ export default function Home() {
 
         <section className="cta-section">
           <div className="container cta-card">
-            <div><p className="eyebrow">EXPLORE THE EVIDENCE</p><h2>The source is private. The engineering decisions are inspectable.</h2><p>Open the authenticated production shell, inspect my public engineering work, or see the automation’s published output.</p></div>
+            <div><p className="eyebrow">EXPLORE</p><h2>Production source stays private; selected engineering decisions are public.</h2><p>See the production application, the public output, or the rest of my GitHub work.</p></div>
             <div className="cta-actions"><ExternalButton href={links.github}><Github size={16} aria-hidden="true" />GitHub profile</ExternalButton><ExternalButton href={links.youtube}><Youtube size={17} aria-hidden="true" />YouTube channel</ExternalButton><ExternalButton href={links.production} variant="primary">Production app</ExternalButton></div>
           </div>
         </section>
