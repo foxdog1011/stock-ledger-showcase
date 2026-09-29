@@ -1,8 +1,6 @@
 # Stock Ledger — Engineering Case Study
 
-Stock Ledger is a private Taiwan-equity research and portfolio monitoring system.
-This public repository documents selected engineering decisions without exposing
-portfolio data, credentials, or production source.
+Stock Ledger is a private Taiwan-equity research and portfolio monitoring system. This public repository documents selected engineering decisions without exposing portfolio data, credentials, or production source.
 
 ## Links
 
@@ -29,5 +27,4 @@ npm run build
 npm run test:e2e:ui
 ```
 
-Public screenshots and metrics are reviewed before publication and contain no
-personal holdings, trades, cash balances, credentials, or user identity.
+Public screenshots and metrics are reviewed before publication and contain no personal holdings, trades, cash balances, credentials, or user identity.
