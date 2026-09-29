@@ -5,4 +5,6 @@ playwright-report/
 test-results/
 .DS_Store
 *.tsbuildinfo
-
+AGENTS.md
+CLAUDE.md
+SPEC.md
