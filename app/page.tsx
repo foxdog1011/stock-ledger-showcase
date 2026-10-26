@@ -19,6 +19,7 @@ const asset = (path: string) => `${BASE_PATH}${path}`;
 
 const links = {
   production: "https://covenest.systems",
+  guest: "https://covenest.systems/auth/guest",
   github: "https://github.com/foxdog1011",
   youtube: "https://www.youtube.com/channel/UC-TJSNbjSGP4c447hPjYLow",
 };
@@ -88,6 +89,7 @@ export default function Home() {
             <span><b>Stock Ledger</b><small>Production case study</small></span>
           </a>
           <nav aria-label="Showcase navigation">
+            <a href="#walkthrough">Walkthrough</a>
             <a href="#architecture">Architecture</a>
             <a href="#cases">Case studies</a>
             <a href="#evidence">Evidence</a>
@@ -112,7 +114,8 @@ export default function Home() {
               </p>
               <div className="hero-actions">
                 <a className="button button-primary" href="#cases">Read the engineering cases<ArrowDown size={15} aria-hidden="true" /></a>
-                <ExternalButton href={links.production} label="Open the authenticated Stock Ledger production application">Production app <span className="button-note">login required</span></ExternalButton>
+                <ExternalButton href={links.guest} label="Open the read-only Stock Ledger guest view">Explore the guest view</ExternalButton>
+                <ExternalButton href={links.production} variant="quiet" label="Open the authenticated Stock Ledger production application">Production app <span className="button-note">login required</span></ExternalButton>
               </div>
               <div className="trust-note"><LockKeyhole size={15} aria-hidden="true" /><span>The product stays private. This case study uses dated, sanitized evidence and never loads portfolio data.</span></div>
             </div>
@@ -123,6 +126,20 @@ export default function Home() {
               </div>
               <div className="proof-foot"><CheckCircle2 size={15} aria-hidden="true" /><span>Numbers are supporting evidence—not the product claim.</span></div>
             </aside>
+          </div>
+        </section>
+
+        <section className="section walkthrough-section" id="walkthrough">
+          <div className="container">
+            <div className="section-heading">
+              <div><p className="eyebrow">PRODUCT WALKTHROUGH</p><h2>From a market change to a decision you can revisit.</h2></div>
+              <p>The guest view exposes read-only market research. Personal holdings and decisions stay behind account access.</p>
+            </div>
+            <ol className="walkthrough-list">
+              <li><span>01</span><div><h3>Start with what changed</h3><p>Open the guest view to explore market, theme, and stock research without an account.</p><a href={links.guest} target="_blank" rel="noreferrer">Open read-only guest view <ArrowUpRight size={14} aria-hidden="true" /></a></div></li>
+              <li><span>02</span><div><h3>Check the evidence</h3><p>Review the source, effective date, freshness, and uncertainty before treating a claim as a fact.</p><a href="#evidence">See the sanitized evidence card <ArrowDown size={14} aria-hidden="true" /></a></div></li>
+              <li><span>03</span><div><h3>Record the decision</h3><p>In the private workspace, research connects to a holding, a thesis, and a later review. Missing data stays unavailable rather than becoming zero.</p><a href="#architecture">See the data boundary <ArrowDown size={14} aria-hidden="true" /></a></div></li>
+            </ol>
           </div>
         </section>
 
@@ -210,8 +227,8 @@ export default function Home() {
 
         <section className="cta-section">
           <div className="container cta-card">
-            <div><p className="eyebrow">EXPLORE THE EVIDENCE</p><h2>The source is private. The engineering decisions are inspectable.</h2><p>Open the authenticated production shell, inspect my public engineering work, or see the automation’s published output.</p></div>
-            <div className="cta-actions"><ExternalButton href={links.github}><Github size={16} aria-hidden="true" />GitHub profile</ExternalButton><ExternalButton href={links.youtube}><Youtube size={17} aria-hidden="true" />YouTube channel</ExternalButton><ExternalButton href={links.production} variant="primary">Production app</ExternalButton></div>
+            <div><p className="eyebrow">EXPLORE THE EVIDENCE</p><h2>The source is private. The engineering decisions are inspectable.</h2><p>Try the read-only market view, inspect my public engineering work, or see the automation’s published output.</p></div>
+            <div className="cta-actions"><ExternalButton href={links.github}><Github size={16} aria-hidden="true" />GitHub profile</ExternalButton><ExternalButton href={links.youtube}><Youtube size={17} aria-hidden="true" />YouTube channel</ExternalButton><ExternalButton href={links.guest} variant="primary">Guest view</ExternalButton></div>
           </div>
         </section>
       </main>

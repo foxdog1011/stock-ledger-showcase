@@ -14,7 +14,15 @@ test("the public case study is legible, navigable, and bounded", async ({ page }
 
   const imageCount = await page.locator("figure img").count();
   expect(imageCount).toBe(2);
-  for (let index = 0; index < imageCount; index += 1) await expect(page.locator("figure img").nth(index)).toHaveAttribute("alt", /.+/);
+  for (let index = 0; index < imageCount; index += 1) {
+    const screenshot = page.locator("figure img").nth(index);
+    await expect(screenshot).toHaveAttribute("alt", /.+/);
+    await screenshot.scrollIntoViewIfNeeded();
+    await expect(screenshot).toHaveJSProperty("complete", true);
+    expect(await screenshot.evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
+  }
+
+  await page.evaluate(() => window.scrollTo(0, 0));
 
   await page.screenshot({ path: testInfo.outputPath(`showcase-${testInfo.project.name}.png`), fullPage: true });
 });
