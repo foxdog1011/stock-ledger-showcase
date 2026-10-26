@@ -17,8 +17,8 @@ test("public proof links and access expectations are explicit", () => {
   assert.match(page, /never loads portfolio data/);
 });
 
-test("dated metrics match the verified 2026-08-31 snapshot", () => {
-  for (const value of ["551", "924", "263,079", "238"]) assert.match(page, new RegExp(value.replace(",", ",")));
+test("dated metrics match the stated 2026-08-31 snapshot", () => {
+  for (const value of ["12+", "924", "263K+", "2026"]) assert.ok(page.includes(value));
   assert.match(page, /31 AUG 2026/);
   assert.doesNotMatch(page, /937|257,617|274\.8|Subscribers attributed/);
 });

@@ -7,11 +7,14 @@ portfolio data, credentials, or production source.
 ## Links
 
 - [Published case study](https://foxdog1011.github.io/stock-ledger-showcase/)
+- [Read-only guest view](https://covenest.systems/auth/guest) — market and stock research without an account
 - [Production application](https://covenest.systems) *(login required)*
 - [Public YouTube output](https://www.youtube.com/channel/UC-TJSNbjSGP4c447hPjYLow)
 - [GitHub profile](https://github.com/foxdog1011)
 
 ## What the case study covers
+
+The [product walkthrough](https://foxdog1011.github.io/stock-ledger-showcase/#walkthrough) follows a market change through dated evidence to a private decision record.
 
 - validating an investment signal against realized outcomes
 - keeping historical portfolio analysis point-in-time correct

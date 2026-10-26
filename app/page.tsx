@@ -18,6 +18,7 @@ const asset = (path: string) => `${BASE_PATH}${path}`;
 
 const links = {
   production: "https://covenest.systems",
+  guest: "https://covenest.systems/auth/guest",
   github: "https://github.com/foxdog1011",
   youtube: "https://www.youtube.com/channel/UC-TJSNbjSGP4c447hPjYLow",
 };
@@ -90,6 +91,7 @@ export default function Home() {
             <span><b>Stock Ledger</b><small>Production case study</small></span>
           </a>
           <nav aria-label="Showcase navigation">
+            <a href="#walkthrough">Walkthrough</a>
             <a href="#architecture">Architecture</a>
             <a href="#cases">Case studies</a>
             <a href="#evidence">Evidence</a>
@@ -114,6 +116,7 @@ export default function Home() {
               </p>
               <div className="hero-actions">
                 <a className="button button-primary" href="#cases">Read the engineering cases<ArrowDown size={15} aria-hidden="true" /></a>
+                <ExternalButton href={links.guest} label="Open the read-only Stock Ledger guest view">Read-only guest view</ExternalButton>
                 <ExternalButton href={links.production} label="Open the authenticated Stock Ledger production application">Production app <span className="button-note">login required</span></ExternalButton>
               </div>
               <div className="trust-note"><LockKeyhole size={15} aria-hidden="true" /><span>The product stays private. This case study uses dated, sanitized evidence and never loads portfolio data.</span></div>
@@ -125,6 +128,20 @@ export default function Home() {
               </div>
               <div className="proof-foot"><CheckCircle2 size={15} aria-hidden="true" /><span>Numbers are supporting evidence—not the product claim.</span></div>
             </aside>
+          </div>
+        </section>
+
+        <section className="section walkthrough-section" id="walkthrough">
+          <div className="container">
+            <div className="section-heading">
+              <div><p className="eyebrow">PRODUCT WALKTHROUGH</p><h2>From a market change to a decision record.</h2></div>
+              <p>The guest view exposes read-only market research. Holdings and personal decisions stay behind account access.</p>
+            </div>
+            <ol className="walkthrough-list">
+              <li><span>01</span><div><h3>See what changed</h3><p>Explore market, theme, and stock research through the read-only guest view.</p><a href={links.guest} target="_blank" rel="noreferrer">Open guest view <ArrowUpRight size={14} aria-hidden="true" /></a></div></li>
+              <li><span>02</span><div><h3>Check the evidence</h3><p>Inspect source, effective date, freshness, and uncertainty before treating a claim as fact.</p><a href="#evidence">See a sanitized example <ArrowDown size={14} aria-hidden="true" /></a></div></li>
+              <li><span>03</span><div><h3>Record a decision</h3><p>The private workspace links research to a holding, thesis, and later review. Missing values remain unavailable.</p><a href="#architecture">See the data boundary <ArrowDown size={14} aria-hidden="true" /></a></div></li>
+            </ol>
           </div>
         </section>
 

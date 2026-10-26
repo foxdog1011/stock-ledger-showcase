@@ -2,8 +2,10 @@ import { expect, test } from "@playwright/test";
 
 test("the public case study is legible, navigable, and bounded", async ({ page }, testInfo) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("what changed");
-  await expect(page.locator("#cases").getByRole("heading", { level: 2 })).toContainText("decisions are the proof");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("production research and portfolio monitoring");
+  await expect(page.locator("#cases").getByRole("heading", { level: 2 })).toContainText("Three decisions");
+  await expect(page.locator("#walkthrough").getByRole("listitem")).toHaveCount(3);
+  await expect(page.getByRole("link", { name: "Open the read-only Stock Ledger guest view" })).toHaveAttribute("href", "https://covenest.systems/auth/guest");
   await expect(page.getByRole("link", { name: /production application/i })).toHaveAttribute("href", "https://covenest.systems");
   await expect(page.getByRole("link", { name: /YouTube channel/i }).first()).toHaveAttribute("href", /youtube\.com\/channel\//);
   await expect(page.locator("main")).toBeVisible();
@@ -14,7 +16,15 @@ test("the public case study is legible, navigable, and bounded", async ({ page }
 
   const imageCount = await page.locator("figure img").count();
   expect(imageCount).toBe(2);
-  for (let index = 0; index < imageCount; index += 1) await expect(page.locator("figure img").nth(index)).toHaveAttribute("alt", /.+/);
+  for (let index = 0; index < imageCount; index += 1) {
+    const screenshot = page.locator("figure img").nth(index);
+    await expect(screenshot).toHaveAttribute("alt", /.+/);
+    await screenshot.scrollIntoViewIfNeeded();
+    await expect(screenshot).toHaveJSProperty("complete", true);
+    expect(await screenshot.evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
+  }
+
+  await page.evaluate(() => window.scrollTo(0, 0));
 
   await page.screenshot({ path: testInfo.outputPath(`showcase-${testInfo.project.name}.png`), fullPage: true });
 });
